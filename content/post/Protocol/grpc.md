@@ -3,9 +3,7 @@ title: "gRPCとは？"
 slug: grpc
 date: 2022-02-22T18:35:48+09:00
 with_date: true
-categories: [
-    "プロトコル"
-]
+categories: ["プロトコル"]
 tags: ["Protocol","解説","Golang"]
 ---
 
@@ -33,3 +31,6 @@ GolangではgrpcというモジュールをインポートするだけでgRPCが
 
 ## なぎさの一言
 {{<chat face="doya" text="gRPCはハイスペックだけど普及率など問題点も多い！そのため時と場合に応じた技術選定が必要ですね！">}}
+
+##　参考文献
+https://knowledge.sakura.ad.jp/24059/
