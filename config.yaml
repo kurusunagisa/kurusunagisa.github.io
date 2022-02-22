@@ -34,7 +34,7 @@ params:
 
     sidebar:
         emoji: 
-        subtitle: 来栖なぎさの実験室です！
+        subtitle: 来栖なぎさが実験します！
         avatar:
             enabled: true
             local: true
@@ -132,7 +132,6 @@ related:
 markup:
     goldmark:
         renderer:
-            ## Set to true if you have HTML content inside Markdown
             unsafe: true
     tableOfContents:
         endLevel: 4
