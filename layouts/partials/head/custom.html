@@ -1,0 +1,66 @@
+<style>
+    :root {
+        /*--article-font-family: "Kosugi Maru", var(--base-font-family);*/
+        --sys-font-family: "M PLUS Rounded 1c", var(--base-font-family);
+    }
+
+    .balloon5 {
+        width: 100%;
+        margin: 1.5em 0;
+        overflow: hidden;
+    }
+
+    .balloon5 .faceicon {
+        float: left;
+        margin-right: -90px;
+        width: 100px;
+    }
+
+    .balloon5 .faceicon img {
+        width: 100%;
+        height: auto;
+        border: solid 3px #d7ebfe;
+        border-radius: 50%;
+    }
+
+    .balloon5 .chatting {
+        width: 100%;
+    }
+
+    .says {
+        display: inline-block;
+        position: relative;
+        margin: 20px 0 0 105px;
+        padding: 17px 13px;
+        border-radius: 12px;
+        background: #d7ebfe;
+    }
+
+    .says:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 18px;
+        left: -24px;
+        border: 12px solid transparent;
+        border-right: 12px solid #d7ebfe;
+    }
+
+    .says p {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        //customFont.href = "https://fonts.googleapis.com/css2?family=Kosugi%20Maru:wght@400;700&display=swap";
+        customFont.href = "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
