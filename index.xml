@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>来栖なぎさの実験室</title><link>https://kurusunagisa.github.io/</link><description>Recent content on 来栖なぎさの実験室</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Tue, 22 Feb 2022 22:16:16 +0900</lastBuildDate><atom:link href="https://kurusunagisa.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Github Deploy Error</title><link>https://kurusunagisa.github.io/p/github-deploy-error/</link><pubDate>Tue, 22 Feb 2022 22:16:16 +0900</pubDate><guid>https://kurusunagisa.github.io/p/github-deploy-error/</guid><description>&lt;h2 id="エラー内容">エラー内容&lt;/h2>
+&lt;p>GithubでHugoをデプロイしようとすると以下のエラーが起こりました。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">(一部抜粋)
+ERROR 2022/02/22 13:07:50 render of &amp;#34;page&amp;#34; failed: execute of template failed: template: page/search.html:11:19: executing &amp;#34;left-sidebar&amp;#34; at &amp;lt;partial &amp;#34;sidebar/left.html&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/home/runner/work/blog/blog/themes/hugo-theme-stack/layouts/partials/sidebar/left.html:43:58&amp;#34;: execute of template failed: template: partials/sidebar/left.html:43:58: executing &amp;#34;partials/sidebar/left.html&amp;#34; at &amp;lt;.Params.newTab&amp;gt;: can&amp;#39;t evaluate field Params in type *navigation.MenuEntry
+Total in 164 ms
+Error: Process completed with exit code 255.
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="解決策">解決策&lt;/h2>
+&lt;p>HugoのExtendedをビルド時にダウンロードするようにします。以下のようにして、Extendedを有効にしてください。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github pages&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="l">main &lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-18.04&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">submodules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">fetch-depth&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Setup Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-hugo@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">hugo-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;0.92.2&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">extended&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo --minify&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-gh-pages@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">deploy_key&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">external_repository&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">kurusunagisa/blog&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">publish_branch&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="なぎさの一言">なぎさの一言&lt;/h2>
+&lt;div class="balloon5">
+&lt;div class="faceicon">
+&lt;img src="https://kurusunagisa.github.io/img/wink.png" alt="icon">
+&lt;/div>
+&lt;div class="chatting">
+&lt;div class="says">
+エラーはしっかりとググって解決することが大事です！
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>gRPCとは？</title><link>https://kurusunagisa.github.io/p/grpc/</link><pubDate>Tue, 22 Feb 2022 18:35:48 +0900</pubDate><guid>https://kurusunagisa.github.io/p/grpc/</guid><description>&lt;h1 id="この記事でわかること">この記事でわかること&lt;/h1>
+&lt;ul>
+&lt;li>RPCとは何か&lt;/li>
+&lt;li>gRPCの成り立ち&lt;/li>
+&lt;li>gRPCとGolangの繋がり&lt;/li>
+&lt;/ul>
+&lt;h2 id="rpcとは">RPCとは？&lt;/h2>
+&lt;p>皆さんはRPCを知っていますか？
+RPCは情報のやり取りの手法で、「クライアントーサーバ」型の通信プロトコルです。クライアントがサーバに対してパラメータでデータを送信し、サーバはパラメータに応じた処理を実行してその結果をクライアントに返します。簡単に言えば、APIサーバにリクエストを投げると結果が返ってくる、そんなイメージです。私たちが普段目にするパラメータはXML形式やJSON形式が多いです。ただ、これらは人間が扱いやすくすることを最優先した結果データの転送効率が悪くなってしまったのでした……&lt;/p>
+&lt;h2 id="効率の良いプロトコルを目指して">効率の良いプロトコルを目指して&lt;/h2>
+&lt;p>転送効率のいい形式を目指した結果、ある1つの形式が生まれました。それがgRPCです。&lt;/p>
+&lt;p>gRPCは天下のGoogleが開発した技術がベースとなっています。だからgが頭につくんですね。Googleのサービスはマイクロサービスアーキテクチャで構築されており、サービス間のデータのやり取りが非常に多いというわけです。そのため、Googleのつよつよエンジニアが~自分達で勝手に~プロトコルを定義して使っていました。現代はマイクロサービスアーキテクチャ全盛期。gRPCはマイクロサービスアーキテクチャに特化して作られており、非常に効率が良く扱いやすいのです。そのため、今日現在ではgRPCが多くの場所で使われています。&lt;/p>
+&lt;h2 id="golangとgrpc">GolangとgRPC&lt;/h2>
+&lt;p>GolangはgRPCと同じくGoogle製です。そのため、相性がいいのです。(この世はGoogleに支配されている)&lt;/p>
+&lt;p>GolangではgrpcというモジュールをインポートするだけでgRPCが使えます。&lt;/p>
+&lt;!--Golangの実装例 -->
+&lt;h2 id="なぎさの一言">なぎさの一言&lt;/h2>
+&lt;div class="balloon5">
+&lt;div class="faceicon">
+&lt;img src="https://kurusunagisa.github.io/img/doya.png" alt="icon">
+&lt;/div>
+&lt;div class="chatting">
+&lt;div class="says">
+gRPCはハイスペックだけど普及率など問題点も多い！そのため時と場合に応じた技術選定が必要ですね！
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>##　参考文献
+&lt;a class="link" href="https://knowledge.sakura.ad.jp/24059/" target="_blank" rel="noopener"
+>https://knowledge.sakura.ad.jp/24059/&lt;/a>&lt;/p></description></item><item><title>初めまして！</title><link>https://kurusunagisa.github.io/p/%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>https://kurusunagisa.github.io/p/%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6/</guid><description>&lt;div class="balloon5">
+&lt;div class="faceicon">
+&lt;img src="https://kurusunagisa.github.io/img/rough.png" alt="icon">
+&lt;/div>
+&lt;div class="chatting">
+&lt;div class="says">
+こんにちは！！！来栖なぎさです！！
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="balloon5">
+&lt;div class="faceicon">
+&lt;img src="https://kurusunagisa.github.io/img/doya.png" alt="icon">
+&lt;/div>
+&lt;div class="chatting">
+&lt;div class="says">
+なぎさの成長を見てくださいね～！
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="balloon5">
+&lt;div class="faceicon">
+&lt;img src="https://kurusunagisa.github.io/img/wink.png" alt="icon">
+&lt;/div>
+&lt;div class="chatting">
+&lt;div class="says">
+それでは、今後ともよろしく！
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
