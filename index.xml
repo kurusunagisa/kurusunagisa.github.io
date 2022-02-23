@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>来栖なぎさの実験室</title><link>https://kurusunagisa.github.io/blog/</link><description>Recent content on 来栖なぎさの実験室</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Tue, 22 Feb 2022 22:16:16 +0900</lastBuildDate><atom:link href="https://kurusunagisa.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Github Deploy Error</title><link>https://kurusunagisa.github.io/blog/p/github-deploy-error/</link><pubDate>Tue, 22 Feb 2022 22:16:16 +0900</pubDate><guid>https://kurusunagisa.github.io/blog/p/github-deploy-error/</guid><description>&lt;h2 id="エラー内容">エラー内容&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>来栖なぎさの実験室</title><link>https://kurusunagisa.github.io/blog/</link><description>Recent content on 来栖なぎさの実験室</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Wed, 23 Feb 2022 18:34:50 +0900</lastBuildDate><atom:link href="https://kurusunagisa.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Github Actions</title><link>https://kurusunagisa.github.io/blog/p/github-actions/</link><pubDate>Wed, 23 Feb 2022 18:34:50 +0900</pubDate><guid>https://kurusunagisa.github.io/blog/p/github-actions/</guid><description>&lt;p>Github Actionsを使いたいとき、yamlファイルにアクションを定義します。ここでは、アップロード先のリポジトリをblog-sourceにしてGithub　Actionsでビルド、blogリポジトリにビルド結果をpushすることでソースをblog-source、ブログの静的ファイルをblogに置くこととします。このとき、blog-sourceにアップロードする&lt;code>blog-source/.github/workflows/gh-pages.yml&lt;/code>は以下のように書きます 。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-20.04&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">concurrency&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">group&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ github.workflow }}-${{ github.ref }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">submodules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">fetch-depth&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Setup Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-hugo@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">hugo-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;0.92.2&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">extended&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo --minify&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Push to blog repo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">cpina/github-action-push-to-another-repository@main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">env&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">API_TOKEN_GITHUB&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.HUGO_DEPLOY_TOKEN }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">source-directory&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;public&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">destination-github-username&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;kurusunagisa&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">destination-repository-name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;blog&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">user-email&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">kurusunagisa963@gmail.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">target-branch&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>ここで行なっている処理とその効果は以下の通りです。&lt;/p>
+&lt;ul>
+&lt;li>Github ActionsでHugoをビルドするとpublicフォルダに静的ファイル群が生成される&lt;/li>
+&lt;li>静的ファイル群をblogリポジトリのルートにpushする&lt;/li>
+&lt;li>Github Pagesをルートディレクトリに設定してあれば、静的ファイル群が自動的にGithub Pagesに乗っかる&lt;/li>
+&lt;/ul></description></item><item><title>Github Deploy Error</title><link>https://kurusunagisa.github.io/blog/p/github-deploy-error/</link><pubDate>Tue, 22 Feb 2022 22:16:16 +0900</pubDate><guid>https://kurusunagisa.github.io/blog/p/github-deploy-error/</guid><description>&lt;h2 id="エラー内容">エラー内容&lt;/h2>
 &lt;p>GithubでHugoをデプロイしようとすると以下のエラーが起こりました。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -89,7 +177,7 @@ Error: Process completed with exit code 255.
 &lt;/div>&lt;h2 id="なぎさの一言">なぎさの一言&lt;/h2>
 &lt;div class="balloon5">
 &lt;div class="faceicon">
-&lt;img src='img/wink.png' alt="icon">
+&lt;img src='https://kurusunagisa.github.io/blog/blog/img/wink.png' alt="icon">
 &lt;/div>
 &lt;div class="chatting">
 &lt;div class="says">
@@ -115,7 +203,7 @@ RPCは情報のやり取りの手法で、「クライアントーサーバ」�
 &lt;h2 id="なぎさの一言">なぎさの一言&lt;/h2>
 &lt;div class="balloon5">
 &lt;div class="faceicon">
-&lt;img src='img/doya.png' alt="icon">
+&lt;img src='https://kurusunagisa.github.io/blog/blog/img/doya.png' alt="icon">
 &lt;/div>
 &lt;div class="chatting">
 &lt;div class="says">
@@ -127,7 +215,7 @@ gRPCはハイスペックだけど普及率など問題点も多い！そのた�
 &lt;p>&lt;a class="link" href="https://knowledge.sakura.ad.jp/24059/" target="_blank" rel="noopener"
 >https://knowledge.sakura.ad.jp/24059/&lt;/a>&lt;/p></description></item><item><title>初めまして！</title><link>https://kurusunagisa.github.io/blog/p/%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>https://kurusunagisa.github.io/blog/p/%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6/</guid><description>&lt;div class="balloon5">
 &lt;div class="faceicon">
-&lt;img src='img/rough.png' alt="icon">
+&lt;img src='https://kurusunagisa.github.io/blog/blog/img/rough.png' alt="icon">
 &lt;/div>
 &lt;div class="chatting">
 &lt;div class="says">
@@ -137,7 +225,7 @@ gRPCはハイスペックだけど普及率など問題点も多い！そのた�
 &lt;/div>
 &lt;div class="balloon5">
 &lt;div class="faceicon">
-&lt;img src='img/doya.png' alt="icon">
+&lt;img src='https://kurusunagisa.github.io/blog/blog/img/doya.png' alt="icon">
 &lt;/div>
 &lt;div class="chatting">
 &lt;div class="says">
@@ -147,7 +235,7 @@ gRPCはハイスペックだけど普及率など問題点も多い！そのた�
 &lt;/div>
 &lt;div class="balloon5">
 &lt;div class="faceicon">
-&lt;img src='img/wink.png' alt="icon">
+&lt;img src='https://kurusunagisa.github.io/blog/blog/img/wink.png' alt="icon">
 &lt;/div>
 &lt;div class="chatting">
 &lt;div class="says">
