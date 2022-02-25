@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>来栖なぎさの実験室</title><link>https://kurusunagisa.github.io/</link><description>Recent content on 来栖なぎさの実験室</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Thu, 24 Feb 2022 18:42:25 +0900</lastBuildDate><atom:link href="https://kurusunagisa.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Macでcodeコマンドが使えない時のソリューション</title><link>https://kurusunagisa.github.io/blog/2022/02/eacces/</link><pubDate>Thu, 24 Feb 2022 18:42:25 +0900</pubDate><guid>https://kurusunagisa.github.io/blog/2022/02/eacces/</guid><description>&lt;h2 id="実行環境">実行環境&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>来栖なぎさの実験室</title><link>https://kurusunagisa.github.io/</link><description>Recent content on 来栖なぎさの実験室</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Fri, 25 Feb 2022 20:30:37 +0900</lastBuildDate><atom:link href="https://kurusunagisa.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Swiftの記法とかをまとめる</title><link>https://kurusunagisa.github.io/blog/2022/02/extension/</link><pubDate>Fri, 25 Feb 2022 20:30:37 +0900</pubDate><guid>https://kurusunagisa.github.io/blog/2022/02/extension/</guid><description>&lt;h2 id="extension">extension&lt;/h2>
+&lt;p>extensionは既存のクラスに定義を追加するために用いられます。例えば以下の例だと、UIColorにrandomというプロパティ(定数とは何が違うのか知らないけど)が新たに定義されたということになります。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-swift" data-lang="swift">&lt;span class="kd">import&lt;/span> &lt;span class="nc">UIKit&lt;/span>
+&lt;span class="kd">extension&lt;/span> &lt;span class="nc">UIColor&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">static&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nv">random&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">UIColor&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">let&lt;/span> &lt;span class="nv">r&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">CGFloat&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">in&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">..&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mf">255.0&lt;/span>
+&lt;span class="kd">let&lt;/span> &lt;span class="nv">g&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">CGFloat&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">in&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">..&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mf">255.0&lt;/span>
+&lt;span class="kd">let&lt;/span> &lt;span class="nv">b&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">CGFloat&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">in&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">0.&lt;/span>&lt;span class="p">..&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mf">255.0&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">UIColor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">red&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">r&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">green&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">g&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">blue&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">alpha&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>わからないこと&lt;/p>
+&lt;ul>
+&lt;li>extendと何が違うのか？&lt;/li>
+&lt;li>extendとの使い分けがよくわからない&lt;/li>
+&lt;/ul>
+&lt;h2 id="closedrange">ClosedRange&lt;/h2>
+&lt;p>ClosedRangeは上限と下限の間の間隔を自動で補完してくれる機能です。例えば、&lt;code>let throughFive = 0...5&lt;/code>と書いたときに、&lt;code>throughFive&lt;/code>では内部的に&lt;code>0,1,2,3,4,5&lt;/code>と展開されるため、以下のように0から5の間の整数が&lt;code>throughFive&lt;/code>に含まれている。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">throughFive.contains&lt;span class="o">(&lt;/span>3&lt;span class="o">)&lt;/span>
+// &lt;span class="nb">true&lt;/span>
+throughFive.contains&lt;span class="o">(&lt;/span>10&lt;span class="o">)&lt;/span>
+// &lt;span class="nb">false&lt;/span>
+throughFive.contains&lt;span class="o">(&lt;/span>5&lt;span class="o">)&lt;/span>
+// &lt;span class="nb">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>小数のときには自動的にdoubleに変換されて一番小さな桁で間隔がとられる。&lt;/p></description></item><item><title>Macでcodeコマンドが使えない時のソリューション</title><link>https://kurusunagisa.github.io/blog/2022/02/eacces/</link><pubDate>Thu, 24 Feb 2022 18:42:25 +0900</pubDate><guid>https://kurusunagisa.github.io/blog/2022/02/eacces/</guid><description>&lt;h2 id="実行環境">実行環境&lt;/h2>
 &lt;ul>
 &lt;li>MacBook Air (M1, 2020) 16GB&lt;/li>
 &lt;li>macOS 12.2.1&lt;/li>
